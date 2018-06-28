@@ -1,14 +1,14 @@
 //
-//  CartTableViewController.swift
+//  CardTableViewController.swift
 //  GoodAsOldPhones
 //
-//  Created by Jon Friskics on 12/16/15.
-//  Copyright © 2015 Code School. All rights reserved.
+//  Created by superuser on 6/28/18.
+//  Copyright © 2018 Code School. All rights reserved.
 //
 
 import UIKit
 
-class CartTableViewController: UITableViewController {
+class CardTableViewController: UITableViewController {
 
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var headerView: UIView!
@@ -17,13 +17,12 @@ class CartTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.tableHeaderView = headerView
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewAllAppear(animated: Bool) {
+        super.viewAllAppear(animated)
 //        let product = Product()
 //        product.name = "1907 Wall Set"
 //        product.productImage = "phone-fullscreen1"
@@ -33,30 +32,34 @@ class CartTableViewController: UITableViewController {
 //        let order = Order()
 //        order.product = product
         
-        // read orders from disk
+        // Read orders form disk
         
+//        ordersInCart = [order, order, order, order]
         ordersInCart = Orders.readOrdersFromArchive()
-        if(ordersInCart == nil) {
+        if (ordersInCart == nil) {
             ordersInCart = []
         }
         
         tableView.reloadData()
-        
         updateTotal()
     }
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if let orders = ordersInCart {
+//            return orders.count
+//        }
+//        return 0
+        
         return ordersInCart?.count ?? 0
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CartCell", forIndexPath: indexPath)
-        
-        let order = ordersInCart?[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath)
 
+        let order = ordersInCart?[indexPath.row]
         if let order = order {
             cell.textLabel?.text = order.product?.name
             cell.detailTextLabel?.text = String(order.product?.price)
@@ -66,23 +69,22 @@ class CartTableViewController: UITableViewController {
     }
     
 
-    
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
             ordersInCart?.removeAtIndex(indexPath.row)
-            // save array to disk
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            if let orders = ordersInCart {
+            // Save array to disk
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            if orders = ordersInCart {
                 Orders.saveOrdersToArchive(orders)
             }
             updateTotal()
         }
     }
     
-    func updateTotal() -> Void {
-        if let orders = ordersInCart {
+    func updateTotal() -> void {
+        if let orders = ordersInCar {
             var total: Double = 0.0
             for order in orders {
                 if let price = order.product?.price {
@@ -92,5 +94,4 @@ class CartTableViewController: UITableViewController {
             totalLabel.text = String(total)
         }
     }
-
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221FE1F020E4EE25007CF0FB /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FE1EF20E4EE25007CF0FB /* CardTableViewController.swift */; };
+		228C956320E51FB500A8705A /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C956220E51FB500A8705A /* Orders.swift */; };
+		228C956520E51FFE00A8705A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C956420E51FFE00A8705A /* Order.swift */; };
 		AB395C2C1BFA3FA800E9CCF4 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB395C2B1BFA3FA800E9CCF4 /* ContactViewController.swift */; };
 		AB395C301BFA52BB00E9CCF4 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB395C2F1BFA52BB00E9CCF4 /* ProductsTableViewController.swift */; };
 		AB395C341BFA60C500E9CCF4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB395C331BFA60C500E9CCF4 /* Product.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221FE1EF20E4EE25007CF0FB /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		228C956220E51FB500A8705A /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
+		228C956420E51FFE00A8705A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		AB395C2B1BFA3FA800E9CCF4 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		AB395C2F1BFA52BB00E9CCF4 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		AB395C331BFA60C500E9CCF4 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 		ABB8DF6F1BF66D5E003E31A7 /* GoodAsOldPhones */ = {
 			isa = PBXGroup;
 			children = (
+				228C956420E51FFE00A8705A /* Order.swift */,
+				221FE1EF20E4EE25007CF0FB /* CardTableViewController.swift */,
+				228C956220E51FB500A8705A /* Orders.swift */,
 				ABB8DF701BF66D5E003E31A7 /* AppDelegate.swift */,
 				ABB8DF741BF66D5E003E31A7 /* Main.storyboard */,
 				ABB8DF771BF66D5E003E31A7 /* Assets.xcassets */,
@@ -145,10 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7033161BF996EF0027E8CB /* ProductViewController.swift in Sources */,
+				228C956320E51FB500A8705A /* Orders.swift in Sources */,
+				228C956520E51FFE00A8705A /* Order.swift in Sources */,
 				AB395C301BFA52BB00E9CCF4 /* ProductsTableViewController.swift in Sources */,
 				AB395C341BFA60C500E9CCF4 /* Product.swift in Sources */,
 				ABB8DF711BF66D5E003E31A7 /* AppDelegate.swift in Sources */,
 				AB395C2C1BFA3FA800E9CCF4 /* ContactViewController.swift in Sources */,
+				221FE1F020E4EE25007CF0FB /* CardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

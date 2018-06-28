@@ -2,13 +2,13 @@
 //  Order.swift
 //  GoodAsOldPhones
 //
-//  Created by Jon Friskics on 12/16/15.
-//  Copyright © 2015 Code School. All rights reserved.
+//  Created by superuser on 6/28/18.
+//  Copyright © 2018 Code School. All rights reserved.
 //
 
 import UIKit
 
-class Order: NSObject {
+class Order: NSObject, NSCoding {
     var product: Product?
     
     override init() {
@@ -21,8 +21,7 @@ class Order: NSObject {
         super.init()
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(product, forKey: "product")
+    func encodedWithCoder(aCoder: NSCoder){
+        aCoder.encodeObject(orders, forKey: "product")
     }
-
 }
